@@ -8,7 +8,7 @@ export default function ProjectCard({ project, index = 0 }) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1, duration: 0.5 }}
-            className="group relative overflow-hidden rounded-lg border border-border bg-card p-6 hover:shadow-lg transition-shadow"
+            className="group relative overflow-hidden rounded-lg glass-card p-6 hover:shadow-lg hover:shadow-red-900/10 transition-shadow"
         >
             <div className="flex flex-col gap-4">
                 <div className="flex items-center justify-between">
@@ -33,7 +33,7 @@ export default function ProjectCard({ project, index = 0 }) {
                     {project.tech.map((tech) => (
                         <span
                             key={tech}
-                            className="inline-flex items-center rounded-md bg-secondary px-2.5 py-0.5 text-xs font-medium text-secondary-foreground"
+                            className="inline-flex items-center rounded-md bg-white/5 border border-white/10 px-2.5 py-0.5 text-xs font-medium text-secondary-foreground"
                         >
                             {tech}
                         </span>

@@ -40,6 +40,15 @@ export default {
       fontFamily: {
         sans: ["Inter", "sans-serif"],
       },
+      keyframes: {
+        'red-pulse': {
+          '0%, 100%': { opacity: '0.15' },
+          '50%': { opacity: '0.45' },
+        },
+      },
+      animation: {
+        'red-pulse': 'red-pulse 6s ease-in-out infinite',
+      },
     },
   },
   plugins: [],

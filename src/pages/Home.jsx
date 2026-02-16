@@ -57,63 +57,68 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* Skills Section */}
-            <Section className="bg-secondary/5">
-                <div className="flex flex-col gap-12">
-                    <div className="text-center space-y-4">
-                        <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Technical Arsenal</h2>
-                        <p className="text-muted-foreground max-w-[600px] mx-auto">
-                            A comprehensive toolset for modern cybersecurity challenges.
-                        </p>
-                    </div>
+            {/* Red pulse background starts here - below hero */}
+            <div className="relative overflow-hidden">
+                <div className="red-pulse-bg" />
 
-                    <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                        {skills.map((skill, i) => (
-                            <motion.div
-                                key={skill.name}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                transition={{ delay: i * 0.1 }}
-                                viewport={{ once: true }}
-                                className="flex flex-col items-center p-6 bg-card rounded-lg border border-border hover:border-primary transition-colors text-center gap-4"
-                            >
-                                {i % 4 === 0 && <Terminal className="w-8 h-8 text-primary" />}
-                                {i % 4 === 1 && <Shield className="w-8 h-8 text-primary" />}
-                                {i % 4 === 2 && <Lock className="w-8 h-8 text-primary" />}
-                                {i % 4 === 3 && <GlobeIcon className="w-8 h-8 text-primary" />}
-                                <h3 className="font-semibold">{skill.name}</h3>
-                                <div className="w-full bg-secondary h-2 rounded-full overflow-hidden">
-                                    <motion.div
-                                        initial={{ width: 0 }}
-                                        whileInView={{ width: `${skill.level}%` }}
-                                        transition={{ duration: 1, ease: "easeOut" }}
-                                        className="bg-primary h-full"
-                                    />
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </Section>
-
-            {/* Featured Projects */}
-            <Section>
-                <div className="flex flex-col gap-12">
-                    <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-                        <div className="space-y-2 text-center md:text-left">
-                            <h2 className="text-3xl font-bold tracking-tighter">Featured Operations</h2>
-                            <p className="text-muted-foreground">Select highlights from my security portfolio.</p>
+                {/* Skills Section */}
+                <Section>
+                    <div className="flex flex-col gap-12 relative z-10">
+                        <div className="text-center space-y-4">
+                            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl">Technical Arsenal</h2>
+                            <p className="text-muted-foreground max-w-[600px] mx-auto">
+                                A comprehensive toolset for modern cybersecurity challenges.
+                            </p>
                         </div>
-                        <Button href="/projects" variant="liquid">View All Projects</Button>
-                    </div>
 
-                    <div className="grid md:grid-cols-2 gap-6">
-                        {featuredProjects.map((project, i) => (
-                            <ProjectCard key={project.id} project={project} index={i} />
-                        ))}
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                            {skills.map((skill, i) => (
+                                <motion.div
+                                    key={skill.name}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: i * 0.1 }}
+                                    viewport={{ once: true }}
+                                    className="flex flex-col items-center p-6 glass-card rounded-lg transition-colors text-center gap-4"
+                                >
+                                    {i % 4 === 0 && <Terminal className="w-8 h-8 text-primary" />}
+                                    {i % 4 === 1 && <Shield className="w-8 h-8 text-primary" />}
+                                    {i % 4 === 2 && <Lock className="w-8 h-8 text-primary" />}
+                                    {i % 4 === 3 && <GlobeIcon className="w-8 h-8 text-primary" />}
+                                    <h3 className="font-semibold">{skill.name}</h3>
+                                    <div className="w-full bg-white/10 h-2 rounded-full overflow-hidden">
+                                        <motion.div
+                                            initial={{ width: 0 }}
+                                            whileInView={{ width: `${skill.level}%` }}
+                                            transition={{ duration: 1, ease: "easeOut" }}
+                                            className="bg-gradient-to-r from-red-600 to-red-400 h-full"
+                                        />
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
                     </div>
-                </div>
-            </Section>
+                </Section>
+
+                {/* Featured Projects */}
+                <Section>
+                    <div className="flex flex-col gap-12 relative z-10">
+                        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+                            <div className="space-y-2 text-center md:text-left">
+                                <h2 className="text-3xl font-bold tracking-tighter">Featured Operations</h2>
+                                <p className="text-muted-foreground">Select highlights from my security portfolio.</p>
+                            </div>
+                            <Button href="/projects" variant="liquid">View All Projects</Button>
+                        </div>
+
+                        <div className="grid md:grid-cols-2 gap-6">
+                            {featuredProjects.map((project, i) => (
+                                <ProjectCard key={project.id} project={project} index={i} />
+                            ))}
+                        </div>
+                    </div>
+                </Section>
+            </div>
         </div>
     );
 }

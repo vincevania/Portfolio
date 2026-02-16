@@ -2,7 +2,7 @@ import { siteConfig } from "../data";
 
 export default function Footer() {
     return (
-        <footer className="border-t border-border bg-background py-12">
+        <footer className="border-t border-white/10 bg-background/30 backdrop-blur-md py-12 relative z-10">
             <div className="container mx-auto px-4 md:px-6 flex flex-col md:flex-row items-center justify-between gap-6">
                 <div className="flex flex-col gap-2 text-center md:text-left">
                     <h3 className="text-lg font-bold">{siteConfig.name}</h3>

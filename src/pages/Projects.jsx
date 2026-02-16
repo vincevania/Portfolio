@@ -5,8 +5,9 @@ import { projects } from "../data";
 
 export default function Projects() {
     return (
-        <div className="flex flex-col">
-            <Section className="pb-8">
+        <div className="flex flex-col relative overflow-hidden">
+            <div className="red-pulse-bg" />
+            <Section className="pb-8 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}

@@ -5,7 +5,8 @@ import { Briefcase } from "lucide-react";
 
 export default function About() {
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col relative overflow-hidden">
+            <div className="red-pulse-bg" />
             <Section>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

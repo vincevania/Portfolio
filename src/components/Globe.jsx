@@ -1,6 +1,6 @@
-import { useRef, useMemo } from "react";
+import { useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { OrbitControls, Sphere, Stars } from "@react-three/drei";
+import { OrbitControls, Stars } from "@react-three/drei";
 import * as THREE from "three";
 
 function PointsGlobe() {
@@ -63,7 +63,21 @@ function Atmosphere() {
     );
 }
 
+function GlobeHitArea({ onHoverChange }) {
+    return (
+        <mesh
+            onPointerEnter={() => onHoverChange(true)}
+            onPointerLeave={() => onHoverChange(false)}
+        >
+            <sphereGeometry args={[2.65, 32, 32]} />
+            <meshBasicMaterial transparent={true} opacity={0} depthWrite={false} />
+        </mesh>
+    );
+}
+
 export default function Globe() {
+    const [isHovering, setIsHovering] = useState(false);
+
     return (
         <div className="absolute inset-0 z-0 w-full h-full">
             <Canvas camera={{ position: [0, 0, 8], fov: 45 }}>
@@ -74,6 +88,7 @@ export default function Globe() {
                     <PointsGlobe />
                     <WireframeGlobe />
                     <Atmosphere />
+                    <GlobeHitArea onHoverChange={setIsHovering} />
                 </group>
 
                 <Stars
@@ -89,6 +104,7 @@ export default function Globe() {
                 <OrbitControls
                     enableZoom={false}
                     enablePan={false}
+                    enableRotate={isHovering}
                     autoRotate={true}
                     autoRotateSpeed={0.5}
                 />

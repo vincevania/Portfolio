@@ -67,7 +67,7 @@ export default function Navbar() {
                                 >
                                     <Link
                                         to={link.href}
-                                        className="text-muted-foreground text-4xl md:text-6xl font-bold tracking-tighter hover:text-primary transition-colors text-right block py-2"
+                                        className="text-primary text-4xl md:text-6xl font-bold tracking-tighter hover:text-muted-foreground transition-colors text-right block py-2"
                                     >
                                         {link.name}
                                     </Link>

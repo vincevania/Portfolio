@@ -6,8 +6,9 @@ import { Mail, MessageSquare } from "lucide-react";
 
 export default function Contact() {
     return (
-        <div className="flex flex-col min-h-[80vh] justify-center">
-            <Section className="max-w-2xl mx-auto text-center space-y-8">
+        <div className="flex flex-col min-h-[80vh] justify-center relative overflow-hidden">
+            <div className="red-pulse-bg" />
+            <Section className="max-w-2xl mx-auto text-center space-y-8 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
