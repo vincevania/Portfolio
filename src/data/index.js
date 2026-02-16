@@ -2,7 +2,7 @@ import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 
 export const siteConfig = {
     name: "Abhishek Rai",
-    title: "Cybersecurity Analyst",
+    title: "Cybersecurity Professional",
     description: "Securing digital infrastructure with modern defense strategies.",
     email: "raiabhishek314@gmail.com",
     socials: [
