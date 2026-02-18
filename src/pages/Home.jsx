@@ -17,11 +17,15 @@ export default function Home() {
 
     return (
         <div className="flex flex-col">
-            {/* Hero Section */}
-            <section className="min-h-screen flex items-center relative overflow-hidden">
+            {/* Fixed Globe Background */}
+            <div className="fixed inset-0 z-0">
                 <Globe />
+            </div>
 
-                <div className="container relative z-10 px-4 md:px-6 flex flex-col items-end text-right gap-6 ml-auto lg:w-1/2">
+            {/* Hero Section */}
+            <section className="min-h-screen flex items-center relative overflow-hidden pointer-events-none">
+
+                <div className="container relative z-10 px-4 md:px-6 flex flex-col items-end text-right gap-6 ml-auto w-3/4 lg:w-1/2 pointer-events-auto">
                     <motion.div
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
