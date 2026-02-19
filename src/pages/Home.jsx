@@ -4,6 +4,7 @@ import Button from "../components/Button";
 import Section from "../components/Section";
 import ProjectCard from "../components/ProjectCard";
 import Globe from "../components/Globe";
+import SEO from "../components/SEO";
 import { siteConfig, skills, projects } from "../data";
 
 const fadeIn = {
@@ -17,6 +18,10 @@ export default function Home() {
 
     return (
         <div className="flex flex-col">
+            <SEO
+                path="/"
+                description="Abhishek Rai — Cybersecurity Professional specializing in defensive security, penetration testing, DevSecOps, and infrastructure hardening."
+            />
             {/* Fixed Globe Background */}
             <div className="fixed inset-0 z-0">
                 <Globe />

@@ -1,12 +1,18 @@
 import { motion } from "framer-motion";
 import Section from "../components/Section";
 import Button from "../components/Button";
+import SEO from "../components/SEO";
 import { siteConfig } from "../data";
 import { Mail, MessageSquare } from "lucide-react";
 
 export default function Contact() {
     return (
         <div className="flex flex-col min-h-[80vh] justify-center relative overflow-hidden">
+            <SEO
+                title="Contact"
+                description="Get in touch with Abhishek Rai for cybersecurity consulting, project collaboration, or career opportunities."
+                path="/contact"
+            />
             <div className="red-pulse-bg" />
             <Section className="max-w-2xl mx-auto text-center space-y-8 relative z-10">
                 <motion.div

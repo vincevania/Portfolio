@@ -1,0 +1,5 @@
+# robots.txt for Abhishek Rai Portfolio
+User-agent: *
+Allow: /
+
+Sitemap: https://abhishek-rai-portfolio.vercel.app/sitemap.xml

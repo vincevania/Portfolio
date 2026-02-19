@@ -1,11 +1,17 @@
 import { motion } from "framer-motion";
 import Section from "../components/Section";
 import ProjectCard from "../components/ProjectCard";
+import SEO from "../components/SEO";
 import { projects } from "../data";
 
 export default function Projects() {
     return (
         <div className="flex flex-col relative overflow-hidden">
+            <SEO
+                title="Projects"
+                description="A collection of cybersecurity tools, research, and infrastructure projects by Abhishek Rai."
+                path="/projects"
+            />
             <div className="red-pulse-bg" />
             <Section className="pb-8 relative z-10">
                 <motion.div

@@ -1,11 +1,17 @@
 import { motion } from "framer-motion";
 import Section from "../components/Section";
+import SEO from "../components/SEO";
 import { experiences } from "../data";
 import { Briefcase } from "lucide-react";
 
 export default function About() {
     return (
         <div className="flex flex-col relative overflow-hidden">
+            <SEO
+                title="About"
+                description="Learn about Abhishek Rai — a cybersecurity professional with 8+ years of experience in penetration testing, DevSecOps, and securing critical infrastructure."
+                path="/about"
+            />
             <div className="red-pulse-bg" />
             <Section>
                 <motion.div
